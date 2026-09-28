@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MIMO · Estética &amp; Salud Integral | Boutique Río Grande</title>
+<meta name="description" content="Un espacio de estética boutique en Río Grande. Tratamientos faciales y corporales personalizados para reconectar con vos."/>
+<meta name="theme-color" content="#FBF8F5"/>
+<!-- Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              charcoal: '#181816',
+              eucalyptus: '#22433D',
+              'eucalyptus-dark': '#172D29',
+              sand: '#FBF8F5',
+              cream: '#F5EFEB',
+              nude: '#ECE4DC',
+              mint: '#BDE8DE',
+              'mint-subtle': '#E7F5F1',
+              'mint-dark': '#006B5D',
+              taupe: '#706660',
+              muted: '#8D847D',
+              border: '#E7DFD7'
+            }
+          },
+          fontFamily: {
+            title: ['Montserrat', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'serif']
+          },
+          letterSpacing: {
+            'editorial': '0.14em',
+            'widest-xl': '0.24em'
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    html, body {
+      background-color: #FBF8F5;
+      color: #181816;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    ::selection {
+      background-color: #BDE8DE;
+      color: #172D29;
+    }
+    .font-serif-italic {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+    }
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Subtle Grain Noise overlay for tactile high-fashion feel */
+    .bg-paper-glow {
+      background-image: radial-gradient(circle at 80% 20%, rgba(189, 232, 222, 0.28), transparent 45%),
+                        radial-gradient(circle at 10% 85%, rgba(245, 239, 235, 0.9), transparent 50%);
+    }
+    /* Pulse badge */
+    @keyframes gentle-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.15); }
+    }
+    .live-dot {
+      animation: gentle-pulse 2.2s infinite ease-in-out;
+    }
+    html { scroll-padding-top: 6rem; }
+    .hero-title em { color: #006b5d; font-weight: 400; }
+    .editorial-strip { overflow: hidden; white-space: nowrap; }
+    .editorial-strip-track { display: flex; width: max-content; animation: strip-move 36s linear infinite; }
+    .editorial-strip-track span { display: inline-flex; align-items: center; gap: 2.5rem; padding-right: 2.5rem; }
+    .editorial-strip-track i { width: 5px; height: 5px; border-radius: 50%; background: #bde8de; }
+    @keyframes strip-move { to { transform: translateX(-50%); } }
+    .synergy-btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid #006b5d; outline-offset: 4px; }
+    /* Editorial hero */
+    .hero-section { background: #172d29 url('assets/hero-mimo.png') center center / cover no-repeat; isolation: isolate; }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.12); filter: contrast(1.08) brightness(.86); z-index: 0; }
+    .hero-section::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(9,25,22,.9) 0%, rgba(11,30,26,.76) 42%, rgba(11,30,26,.28) 100%); }
+    .hero-section > .max-w-\[1440px\] { z-index: 2; }
+    .hero-section::before { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: .28; background: radial-gradient(circle at 79% 29%, rgba(189,232,222,.22), transparent 34%); }
+    #hero .hero-pill, #hero .hero-title, #hero .hero-copy, #hero .hero-actions { animation: hero-arrive .95s cubic-bezier(.16,1,.3,1) both; }
+    #hero .hero-pill { animation-delay: .1s; }
+    #hero .hero-title { animation-delay: .22s; }
+    #hero .hero-copy { animation-delay: .39s; }
+    #hero .hero-actions { animation-delay: .54s; }
+    @keyframes hero-arrive { from { opacity: 0; transform: translateY(28px); filter: blur(5px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+    .hero-side-note { position: absolute; right: 3.5rem; bottom: 3.2rem; z-index: 3; writing-mode: vertical-rl; transform: rotate(180deg); color: rgba(255,255,255,.75); font-size: .62rem; font-weight: 600; letter-spacing: .38em; text-transform: uppercase; display: flex; align-items: center; gap: 1.25rem; }
+    .hero-side-note::before { content: ""; display: block; width: 1px; height: 4rem; background: #bde8de; transform-origin: top; animation: cue-line 2s ease-in-out infinite; }
+    @keyframes cue-line { 50% { transform: scaleY(.55); opacity: .5; } }
+    .hero-title { max-width: 12ch; letter-spacing: -.065em; text-wrap: balance; }
+    #hero .hero-title { color: #fff; }
+    #hero .hero-title em { color: #bde8de; }
+    #hero .hero-title em { display: inline-block; white-space: nowrap; }
+    #hero .hero-last-line { display: block; font-size: .75em; letter-spacing: -.055em; white-space: nowrap; }
+    .hero-copy { max-width: 31rem; letter-spacing: -.02em; }
+    #hero .hero-copy { color: rgba(255,255,255,.78); }
+    #hero .hero-pill { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.27); color: #fff; }
+    #hero .hero-pill span:last-child { color: #fff; }
+    #hero .hero-pill .live-dot { background: #bde8de; }
+    #hero .hero-primary { background: #25d366; color: #073b24; }
+    #hero .hero-primary:hover { background: #1ebe5d; color: #073b24; }
+    #hero .hero-secondary { color: #fff; }
+    #hero .hero-secondary:hover { color: #bde8de; }
+    /* Treatment chapters: image led cards instead of rows */
+    #tratamientos { background: #fbf8f5; }
+    #tratamientos .chapter-photo { position: sticky; top: 7rem; }
+    #tratamientos .chapter-photo > div { border-radius: .5rem 5rem .5rem .5rem; border: 0; box-shadow: 0 24px 60px -25px rgba(23,45,41,.28); }
+    #tratamientos .chapter-photo img { filter: saturate(.78) contrast(1.08); transition: transform .9s cubic-bezier(.16,1,.3,1), filter .7s ease; }
+    #tratamientos .chapter-photo:hover img { filter: saturate(1) contrast(1.04); transform: scale(1.065); }
+    #tratamientos .treatment-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .85rem; counter-reset: treatment; }
+    #tratamientos .treatment-list > .treatment-card { position: relative; overflow: hidden; counter-increment: treatment; padding: 1.65rem; border: 1px solid #e5ded6; border-radius: .35rem 1.65rem .35rem .35rem; background: #fffdfa; min-height: 13rem; cursor: default; transition: transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s ease, background .45s ease, border-color .45s ease; }
+    #tratamientos .treatment-card::before { content: "0" counter(treatment); position: absolute; right: 1.2rem; bottom: -.7rem; font: 300 5rem/.9 'Cormorant Garamond',serif; color: #22433d; opacity: .11; pointer-events: none; transition: transform .45s ease, opacity .45s ease; }
+    #tratamientos .treatment-card:hover::before { transform: translateY(-.35rem); opacity: .2; }
+    #tratamientos .treatment-list > .treatment-card:first-child::before { color: #bde8de; opacity: .25; font-size: 7rem; }
+    #tratamientos .treatment-list > .treatment-card::after { content: ""; position: absolute; left: 0; top: 0; width: 0; height: 3px; background: #4bae9c; transition: width .5s cubic-bezier(.16,1,.3,1); }
+    #tratamientos .treatment-list > .treatment-card:hover::after { width: 100%; }
+    #tratamientos .treatment-list > .treatment-card:hover { transform: translateY(-7px); padding-left: 1.65rem; background: #f1f7f3; border-color: #bde8de; box-shadow: 0 22px 45px -25px rgba(23,45,41,.4); }
+    #tratamientos .treatment-list > .treatment-card:first-child { grid-column: 1 / -1; min-height: 15rem; padding: 2rem 2.2rem; background: #22433d; border-color: #22433d; color: #fff; }
+    #tratamientos .treatment-list > .treatment-card:first-child h3, #tratamientos .treatment-list > .treatment-card:first-child p { color: #fff; }
+    #tratamientos .treatment-list > .treatment-card:first-child h3 { font-size: clamp(1.55rem,2vw,2.25rem); line-height: 1.16; }
+    #tratamientos .treatment-list > .treatment-card:first-child p { color: rgba(255,255,255,.73); }
+    #tratamientos .treatment-list > .treatment-card:first-child span.text-brand-muted { color: #bde8de; }
+    #tratamientos .treatment-list > .treatment-card:first-child:hover { background: #172d29; }
+    #tratamientos .treatment-list > .treatment-card:last-child:nth-child(even) { grid-column: 1 / -1; min-height: 10rem; background: #f3eee8; }
+    #tratamientos .treatment-list > .treatment-card:last-child:nth-child(even) h3 { font-size: clamp(1.45rem,2vw,2rem); }
+    #tratamientos .treatment-card h3 { font-size: clamp(1.12rem,1.35vw,1.4rem); line-height: 1.25; }
+    #tratamientos .treatment-card p { font-size: .84rem; letter-spacing: -.015em; }
+    #tratamientos .treatment-card .flex.flex-col { display: block; }
+    #tratamientos .treatment-card .flex.flex-col > span { display: flex; margin-top: 1rem; }
+    #tratamientos .treatment-card .material-symbols-outlined { margin-left: .2rem; }
+    /* The interactive centerpiece */
+    #sinergia { background: #172d29; border: 0; padding-top: 8rem; padding-bottom: 9rem; }
+    #sinergia::before { content: ""; position: absolute; width: 44rem; height: 44rem; border-radius: 50%; background: radial-gradient(circle,rgba(189,232,222,.14),transparent 68%); right: -12rem; top: -18rem; pointer-events: none; }
+    #sinergia .sinergia-intro { max-width: 55rem; }
+    #sinergia .sinergia-intro > span { color: #bde8de; }
+    #sinergia .sinergia-intro h2 { color: #fff; font-size: clamp(2.8rem,5.3vw,5.75rem); letter-spacing: -.055em; line-height: 1.02; text-wrap: balance; }
+    #sinergia .sinergia-intro p { color: rgba(255,255,255,.65); max-width: 39rem; margin-inline: auto; letter-spacing: -.015em; }
+    #sinergia .sinergia-stage { max-width: 67rem; position: relative; }
+    #sinergia .sinergia-stage::before { content: ""; position: absolute; inset: 16% -8% -8%; background: radial-gradient(ellipse at center, rgba(115,212,192,.2), transparent 65%); filter: blur(28px); pointer-events: none; animation: stage-breathe 7s ease-in-out infinite alternate; }
+    @keyframes stage-breathe { to { transform: scale(1.12); opacity: .65; } }
+    #sinergia #synergyPills { gap: .65rem; margin-bottom: 2.25rem; }
+    #sinergia .synergy-btn { border: 1px solid rgba(255,255,255,.35); background: transparent; color: rgba(255,255,255,.83); padding: .8rem 1.35rem; box-shadow: none; }
+    #sinergia .synergy-btn:hover { transform: translateY(-3px); border-color: #bde8de; color: #fff; }
+    #sinergia .synergy-btn.active { background: #bde8de; color: #172d29; border-color: #bde8de; box-shadow: 0 12px 30px rgba(189,232,222,.2); }
+    #synergyDisplay { background: #fbf8f5; border: 0; border-radius: .45rem 3.25rem .45rem .45rem; padding: clamp(2rem,5vw,4rem); min-height: 25rem; box-shadow: 0 32px 75px rgba(0,0,0,.22); transition: opacity .23s ease, transform .23s ease, filter .23s ease; }
+    #synergyDisplay.is-switching { opacity: .25; transform: translateY(12px) scale(.985); filter: blur(4px); }
+    #synergyDisplay.is-entering { animation: synergy-appear .62s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes synergy-appear { from { opacity: .35; transform: translateY(16px) scale(.985); filter: blur(5px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+    .reveal-on-scroll { opacity: 1; transform: none; }
+    .reveal-on-scroll.is-visible { animation: section-arrive .8s cubic-bezier(.16,1,.3,1) both; }
+    #hero .reveal-on-scroll.is-visible { animation: none; }
+    @keyframes section-arrive { from { opacity: .72; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    #hero .hero-footnote { display: none !important; }
+    #synergyTitle { font-size: clamp(1.8rem,3.4vw,3.65rem); line-height: 1.1; letter-spacing: -.05em; max-width: 17ch; margin-block: 1.5rem; }
+    #synergyDesc { font-size: clamp(.95rem,1.3vw,1.15rem); line-height: 1.8; }
+    #synergyDisplay > div:last-child { gap: 1.5rem; }
+    /* Slower editorial rhythm in the secondary sections */
+    #metodologia { padding-top: 5rem; padding-bottom: 5rem; background: #f5efeb; }
+    #metodologia .grid > div { border-top: 1px solid #cfc5bc; padding-top: 1.3rem; }
+    a[class*="rounded-full"]:hover { transform: translateY(-3px); }
+    a[href^="https://wa.me/"][class*="rounded-full"] { background: #25d366 !important; color: #073b24 !important; border-color: #25d366 !important; box-shadow: 0 10px 25px rgba(14,139,65,.24); min-height: 48px; }
+    a[href^="https://wa.me/"][class*="rounded-full"]:hover { background: #1ebe5d !important; color: #073b24 !important; border-color: #1ebe5d !important; box-shadow: 0 15px 30px rgba(14,139,65,.3); }
+    #tratamientos .pt-8 > a[href^="https://wa.me/"] { padding: .95rem 1.4rem; border-radius: 9999px; background: #25d366; color: #073b24; box-shadow: 0 10px 24px rgba(14,139,65,.2); transition: transform .3s ease, background .3s ease, box-shadow .3s ease; }
+    #tratamientos .pt-8 > a[href^="https://wa.me/"]:hover { background: #1ebe5d; color: #073b24; transform: translateY(-3px); box-shadow: 0 16px 30px rgba(14,139,65,.25); }
+    #synergyDisplay a[href^="https://wa.me/"] { display: inline-flex; padding: .7rem 1rem; border-radius: 9999px; background: #25d366; color: #073b24; text-decoration: none; white-space: nowrap; transition: transform .3s ease, background .3s ease; }
+    #synergyDisplay a[href^="https://wa.me/"]:hover { background: #1ebe5d; transform: translateY(-2px); }
+    #hero a.hero-primary { background: #25d366 !important; color: #073b24 !important; border-color: #25d366 !important; box-shadow: 0 14px 32px rgba(0,0,0,.25); }
+    #hero a.hero-primary:hover { background: #1ebe5d !important; color: #073b24 !important; }
+    .floating-whatsapp { display: inline-flex; align-items: center; gap: .65rem; padding: .78rem 1.15rem; border-radius: 9999px; font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; text-decoration: none; }
+    .floating-whatsapp .material-symbols-outlined { font-size: 1.2rem; }
+    header.is-scrolled { box-shadow: 0 10px 30px rgba(23,45,41,.09); }
+    @media (min-width: 1024px) {
+      .hero-section { min-height: calc(100vh - 5rem); padding-block: 2rem; }
+      .hero-section .hero-layout { gap: 2.2rem; }
+      #hero .hero-title { font-size: clamp(4.8rem,5.7vw,5.8rem); }
+      #hero .hero-title { font-size: clamp(5.2rem,6.2vw,6.5rem); }
+    }
+    @media (max-width: 1023px) { #tratamientos .chapter-photo { position: static; } }
+    @media (max-width: 767px) {
+      .hero-title { max-width: 11ch; font-size: clamp(3.15rem,11vw,4.2rem); }
+      .hero-video { object-position: 58% center; transform: scale(2.5); }
+      .hero-section::after { background: linear-gradient(90deg, rgba(9,25,22,.88), rgba(9,25,22,.58)); }
+      .hero-side-note { display: none; }
+      #tratamientos .treatment-list { grid-template-columns: 1fr; }
+      #tratamientos .treatment-list > .treatment-card:first-child { grid-column: auto; }
+      #tratamientos .treatment-list > .treatment-card:last-child:nth-child(even) { grid-column: auto; }
+      #sinergia { padding-block: 5.5rem; }
+      #synergyDisplay { min-height: 0; }
+      #synergyDisplay > div:last-child { flex-direction: column; align-items: flex-start; }
+      .floating-whatsapp { padding: .8rem 1rem; font-size: .68rem; }
+    }
+    @media (max-width: 767px) {
+      #mobileNav { display: none; }
+      #mobileNav.is-open { display: flex; }
+      .hero-section { padding-top: 3.5rem; padding-bottom: 4rem; }
+      .hero-section .hero-footnote { display: none; }
+      .hero-section .hero-copy { margin-bottom: 1.5rem; }
+    }
+    @media (max-width: 639px) { .header-booking { display: none !important; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal-on-scroll { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body class="bg-brand-sand text-brand-charcoal">
+<!-- ==================== HEADER (ULTRA MINIMAL BOUTIQUE) ==================== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#FBF8F5]/92 backdrop-blur-md border-b border-brand-border/60 transition-all duration-300">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3.5 group" href="#hero">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-white/90 p-1 border border-brand-border/80 flex items-center justify-center transition-all duration-500 group-hover:scale-105 group-hover:border-brand-mint-dark/40 shadow-sm">
+<img alt="MIMO Estética Logo" class="w-full h-full object-contain" src="assets/logo-mimo.jpg"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title tracking-[0.24em] text-sm uppercase font-semibold text-brand-charcoal">MIMO</span>
+<span class="text-[9px] uppercase tracking-[0.3em] text-brand-muted -mt-0.5 font-light">Estética Boutique · TDF</span>
+</div>
+</a>
+<!-- Editorial Nav Links -->
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-xs uppercase tracking-editorial text-brand-taupe hover:text-brand-charcoal transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-eucalyptus hover:after:w-full after:transition-all after:duration-300" href="#filosofia">Filosofía</a>
+<a class="text-xs uppercase tracking-editorial text-brand-taupe hover:text-brand-charcoal transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-eucalyptus hover:after:w-full after:transition-all after:duration-300" href="#tratamientos">Tratamientos</a>
+<a class="text-xs uppercase tracking-editorial text-brand-taupe hover:text-brand-charcoal transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-eucalyptus hover:after:w-full after:transition-all after:duration-300" href="#sinergia">Sinergia</a>
+<a class="text-xs uppercase tracking-editorial text-brand-taupe hover:text-brand-charcoal transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-eucalyptus hover:after:w-full after:transition-all after:duration-300" href="#diagnostico">Diagnóstico</a>
+<a class="text-xs uppercase tracking-editorial text-brand-taupe hover:text-brand-charcoal transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-eucalyptus hover:after:w-full after:transition-all after:duration-300" href="#ubicacion">Ubicación</a>
+</nav>
+<!-- Action Button -->
+<div class="flex items-center gap-4">
+<button id="menuToggle" class="md:hidden w-10 h-10 inline-flex items-center justify-center rounded-full border border-brand-border text-brand-charcoal" type="button" aria-label="Abrir menú" aria-controls="mobileNav" aria-expanded="false"><span class="material-symbols-outlined">menu</span></button>
+<a class="header-booking inline-flex items-center justify-center text-xs uppercase tracking-editorial font-medium px-5 py-2.5 rounded-full border border-brand-charcoal/30 text-brand-charcoal bg-white/40 hover:bg-brand-charcoal hover:text-brand-sand transition-all duration-300 shadow-sm hover:shadow-md" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">
+          Reservar turno
+        </a>
+</div>
+</div>
+<nav id="mobileNav" class="md:hidden flex-col gap-1 px-6 pb-5 bg-brand-sand border-t border-brand-border" aria-label="Navegación móvil">
+<a class="py-3 text-sm border-b border-brand-border" href="#filosofia">Filosofía</a><a class="py-3 text-sm border-b border-brand-border" href="#tratamientos">Tratamientos</a><a class="py-3 text-sm border-b border-brand-border" href="#sinergia">Sinergia</a><a class="py-3 text-sm border-b border-brand-border" href="#diagnostico">Diagnóstico</a><a class="py-3 text-sm" href="#ubicacion">Ubicación</a>
+<a class="mt-2 rounded-full bg-brand-eucalyptus text-white text-center text-xs uppercase tracking-editorial px-5 py-3" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">Reservar turno</a>
+</nav>
+</header>
+<main class="w-full pt-20">
+<!-- ==================== HERO SECTION (HAUTE-COUTURE ASYMMETRIC) ==================== -->
+<section class="hero-section relative min-h-[92vh] flex items-center justify-center py-16 lg:py-24 overflow-hidden bg-paper-glow" id="hero">
+<video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-mimo.png" aria-hidden="true"><source src="masaje.mp4" type="video/mp4"/></video>
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 w-full relative z-10">
+<div class="hero-layout grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Editorial Typography Side -->
+<div class="lg:col-span-8 flex flex-col items-start pr-0 lg:pr-2 reveal-on-scroll">
+<!-- Live Boutique Status Pill -->
+<div class="hero-pill inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/80 border border-brand-border/90 shadow-sm mb-8 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-brand-mint-dark live-dot"></span>
+<span class="text-[11px] uppercase tracking-widest-xl text-brand-eucalyptus font-medium">Atención boutique privada · Río Grande</span>
+</div>
+<!-- Evocative Headline with Serif Accent -->
+<h1 class="hero-title font-title text-[42px] sm:text-[58px] lg:text-[68px] leading-[1.07] font-light text-brand-charcoal tracking-tight mb-8">
+              El arte de<br/><em class="font-serif-italic">sentirte bien</em><span class="hero-last-line">en tu propia piel.</span>
+            </h1>
+<p class="hero-copy text-base sm:text-lg text-brand-taupe font-light leading-relaxed max-w-xl mb-10">
+              Una pausa para reconectar con vos. Tratamientos faciales y corporales pensados para tu piel y tu momento, en Río Grande.
+            </p>
+<!-- Dual Luxury CTAs -->
+<div class="hero-actions flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-7 w-full sm:w-auto">
+<a class="hero-primary inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-charcoal text-brand-sand text-xs uppercase tracking-widest-xl font-medium hover:bg-brand-eucalyptus hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">
+                Reservar turno
+              </a>
+<a class="hero-secondary inline-flex items-center justify-center sm:justify-start gap-3 text-xs uppercase tracking-widest-xl text-brand-charcoal font-medium py-3 group hover:text-brand-mint-dark transition-colors" href="#tratamientos">
+<span>Descubrir tratamientos</span>
+<span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1.5">east</span>
+</a>
+</div>
+<!-- Discrete Editorial Footnote -->
+<div class="hero-footnote mt-14 pt-8 border-t border-brand-border/80 w-full flex items-center justify-between text-xs text-brand-muted tracking-editorial uppercase">
+<span>Atención Boutique Privada</span>
+<span class="footnote-dot text-brand-border">•</span>
+<span>Tecnología Monopolar</span>
+<span class="footnote-dot text-brand-border">•</span>
+<span>Skincare Coreano</span>
+</div>
+</div>
+</div>
+</div>
+<span class="hero-side-note" aria-hidden="true">Estética boutique · Río Grande</span>
+</section>
+<div class="editorial-strip bg-brand-eucalyptus text-brand-sand py-4 border-y border-brand-eucalyptus-dark" aria-label="Cuidado a tu medida, belleza consciente, bienestar real">
+<div class="editorial-strip-track text-[11px] uppercase tracking-[.28em] font-medium" aria-hidden="true"><span>Cuidado a tu medida <i></i> Belleza consciente <i></i> Bienestar real <i></i> Tu momento MIMO <i></i></span><span>Cuidado a tu medida <i></i> Belleza consciente <i></i> Bienestar real <i></i> Tu momento MIMO <i></i></span></div>
+</div>
+<!-- ==================== MANIFIESTO / BLOQUE DE MARCA ==================== -->
+<section class="py-24 lg:py-32 bg-brand-cream/60 border-y border-brand-border/70 relative" id="filosofia">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+<!-- Asymmetrical Header -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-20 reveal-on-scroll">
+<div class="lg:col-span-5">
+<span class="text-[11px] uppercase tracking-widest-xl text-brand-mint-dark font-semibold block mb-4">El Manifiesto MIMO</span>
+<h2 class="font-title text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal leading-[1.15]">
+              No hacemos <br/><span class="font-serif-italic font-normal">tratamientos estándar.</span>
+</h2>
+</div>
+<div class="lg:col-span-7 flex flex-col justify-end pt-2">
+<p class="text-lg sm:text-xl text-brand-taupe font-light leading-relaxed">
+              En MIMO combinamos técnicas y tecnologías según lo que tu piel y tu cuerpo realmente necesitan en cada momento. Desestimamos las recetas genéricas: cada protocolo se calibra a conciencia para acompañar tu biología, tus tiempos y tus objetivos personales.
+            </p>
+</div>
+</div>
+<!-- Editorial Magazine Layout: Photo + 3 Prose Column Pillars -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+<!-- Large Detail Image with DATA:IMAGE:IMAGE_7 -->
+<div class="lg:col-span-5 relative order-2 lg:order-1 reveal-on-scroll">
+<div class="aspect-[4/5] rounded-[2.2rem] overflow-hidden border border-brand-border shadow-md">
+<img alt="Detalle de cuidado facial boutique" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="assets/cuidado-facial.jpg"/>
+</div>
+<div class="absolute -bottom-4 -left-4 bg-brand-sand px-5 py-3 rounded-xl border border-brand-border text-[11px] uppercase tracking-widest text-brand-charcoal font-light shadow-sm">
+              Sinergia Cosmecéutica · Tierra del Fuego
+            </div>
+</div>
+<!-- Editorial List with numbers -->
+<div class="lg:col-span-7 space-y-12 order-1 lg:order-2 reveal-on-scroll">
+<div class="group border-b border-brand-border/80 pb-8 transition-colors">
+<div class="flex items-baseline gap-6 mb-2">
+<span class="font-title text-sm tracking-widest text-brand-mint-dark font-semibold">01 /</span>
+<h3 class="font-title text-2xl font-light text-brand-charcoal">Evaluamos</h3>
+</div>
+<p class="text-brand-taupe text-sm sm:text-base font-light leading-relaxed pl-12">
+                Diagnóstico profundo sin preconcepciones. Analizamos la hidratación, elasticidad tisular, retorno linfático y ritmo de vida para definir con rigor el punto de partida.
+              </p>
+</div>
+<div class="group border-b border-brand-border/80 pb-8 transition-colors">
+<div class="flex items-baseline gap-6 mb-2">
+<span class="font-title text-sm tracking-widest text-brand-mint-dark font-semibold">02 /</span>
+<h3 class="font-title text-2xl font-light text-brand-charcoal">Diseñamos</h3>
+</div>
+<p class="text-brand-taupe text-sm sm:text-base font-light leading-relaxed pl-12">
+                Sinergia exacta de tecnologías de vanguardia y cosmecéutica coreana pura. Articulamos sesiones que responden directamente a lo que la dermis demanda.
+              </p>
+</div>
+<div class="group pb-2 transition-colors">
+<div class="flex items-baseline gap-6 mb-2">
+<span class="font-title text-sm tracking-widest text-brand-mint-dark font-semibold">03 /</span>
+<h3 class="font-title text-2xl font-light text-brand-charcoal">Combinamos</h3>
+</div>
+<p class="text-brand-taupe text-sm sm:text-base font-light leading-relaxed pl-12">
+                Protocolos en constante evolución adaptativa. Cada sesión se recalibra según los avances y la respuesta del cuerpo, garantizando resultados armónicos y naturales.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== TRATAMIENTOS: DOS GRANDES CAPÍTULOS ==================== -->
+<section class="py-20 lg:py-24 relative" id="tratamientos">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+<!-- Section Intro -->
+<div class="max-w-4xl mb-14 reveal-on-scroll">
+<span class="text-[11px] uppercase tracking-widest-xl text-brand-mint-dark font-semibold block mb-3">Carta de Servicios</span>
+<h2 class="font-title text-5xl sm:text-6xl lg:text-7xl font-light text-brand-charcoal leading-[1.02] tracking-[-.055em] mb-6">
+            Dos capítulos pensados para <br/><span class="font-serif-italic font-normal">renovar tu bienestar</span>
+</h2>
+<p class="text-base text-brand-taupe font-light leading-relaxed">
+            Una selección curada de procedimientos no invasivos que combinan aparatología médica de última generación y rituales holísticos de cabina.
+          </p>
+</div>
+<!-- ================= CHAPTER 01: FACIAL ================= -->
+<div class="mb-32 lg:mb-40 reveal-on-scroll">
+<div class="flex items-center gap-4 mb-8">
+<span class="text-xs uppercase tracking-widest-xl text-brand-charcoal font-semibold">Capítulo 01</span>
+<div class="h-[1px] flex-1 bg-brand-border"></div>
+<span class="text-xs uppercase tracking-editorial text-brand-muted">Cuidado Facial Integral</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Large Photo Spread with DATA:IMAGE:IMAGE_7 -->
+<div class="chapter-photo lg:col-span-6 relative">
+<div class="aspect-[3/4] rounded-[2.2rem] overflow-hidden shadow-lg border border-brand-border relative group">
+<img alt="Tratamiento Facial Skincare MIMO" class="w-full h-full object-cover filter contrast-[1.02] transition-transform duration-700 group-hover:scale-105" src="assets/tratamiento-facial-mimo.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/70 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 text-white">
+<span class="text-[10px] uppercase tracking-widest text-brand-mint font-medium block mb-1">Ritual &amp; Ciencia</span>
+<p class="font-title text-xl font-light">Luminosidad, tensado y renovación celular profunda.</p>
+</div>
+</div>
+</div>
+<!-- Right Interactive Service List -->
+<div class="lg:col-span-6 flex flex-col justify-between h-full pt-4">
+<div class="treatment-list">
+<!-- Facial Item 1 -->
+<div class="treatment-card py-8 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+<h3 class="font-title text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors flex items-center gap-3">
+<span>Diagnóstico facial gratuito</span>
+<span class="text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-brand-mint/50 text-brand-mint-dark font-semibold">Recomendado</span>
+</h3>
+<span class="text-xs uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Punto de partida <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Conocé qué necesita realmente tu dermis antes de comenzar cualquier abordaje. Evaluación de manto hidrolipídico, poros y textura sin costo.
+                  </p>
+</div>
+<!-- Facial Item 2 -->
+<div class="treatment-card py-8 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+<h3 class="font-title text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors">
+                      Exilis 360 Ultra facial
+                    </h3>
+<span class="text-xs uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Monopolar 360° <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Tensado cutáneo de precisión, reactivación de elastina y neocolagénesis dérmica profunda para devolver soporte y tersura sin molestias ni tiempos de inactividad.
+                  </p>
+</div>
+<!-- Facial Item 3 -->
+<div class="treatment-card py-8 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+<h3 class="font-title text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors">
+                      Limpieza y skincare coreano
+                    </h3>
+<span class="text-xs uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Glass Skin Effect <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Higiene desincrustante suave combinada con principios activos botánicos coreanos de alta pureza. Deja la piel jugosa, profundamente oxigenada y revitalizada.
+                  </p>
+</div>
+<!-- Facial Item 4 -->
+<div class="treatment-card py-8 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+<h3 class="font-title text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors">
+                      Tratamiento de estrías
+                    </h3>
+<span class="text-xs uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Regeneración Tisular <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Protocolos focalizados orientados a regenerar el tejido dérmico lesionado, alisando progresivamente la textura y devolviendo la homogeneidad a la piel.
+                  </p>
+</div>
+</div>
+<!-- Sub-link -->
+<div class="pt-8">
+<a class="inline-flex items-center gap-3 text-xs uppercase tracking-widest-xl text-brand-charcoal font-semibold hover:text-brand-mint-dark transition-colors" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">
+<span>Consultar por un protocolo facial</span>
+<span class="material-symbols-outlined text-sm">east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= CHAPTER 02: CORPORAL ================= -->
+<div class="reveal-on-scroll">
+<div class="flex items-center gap-4 mb-8">
+<span class="text-xs uppercase tracking-widest-xl text-brand-charcoal font-semibold">Capítulo 02</span>
+<div class="h-[1px] flex-1 bg-brand-border"></div>
+<span class="text-xs uppercase tracking-editorial text-brand-muted">Cuidado Corporal &amp; Modelador</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Editorial Service List -->
+<div class="lg:col-span-6 flex flex-col justify-between h-full pt-4 order-2 lg:order-1">
+<div class="treatment-list">
+<!-- Corporal Item 1 -->
+<div class="treatment-card py-7 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+<h3 class="font-title text-lg sm:text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors">
+                      01 · Drenaje linfático manual + Presoterapia
+                    </h3>
+<span class="text-[11px] uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Alivio inmediato <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Una combinación sinérgica pensada para activar la microcirculación, eliminar líquidos retenidos y recuperar la ligereza anatómica.
+                  </p>
+</div>
+<!-- Corporal Item 2 -->
+<div class="treatment-card py-7 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+<h3 class="font-title text-lg sm:text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors">
+                      02 · Masaje modelador + Ultracavitación
+                    </h3>
+<span class="text-[11px] uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Adiposidad localizada <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Protocolos combinados para trabajar contornos específicos mediante ultrasonido profundo y técnicas manuales vigorizantes.
+                  </p>
+</div>
+<!-- Corporal Item 3 -->
+<div class="treatment-card py-7 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+<h3 class="font-title text-lg sm:text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors">
+                      03 · Vacumterapia / Cupping
+                    </h3>
+<span class="text-[11px] uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Terapia circulatoria <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Succión mecánica para tonificación tisular, descongestión de celulitis fibrótica y oxigenación tisular profunda.
+                  </p>
+</div>
+<!-- Corporal Item 4 -->
+<div class="treatment-card py-7 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+<h3 class="font-title text-lg sm:text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors">
+                      04 · Exilis 360 Ultra corporal
+                    </h3>
+<span class="text-[11px] uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Radiofrecuencia 360 <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Tecnología no invasiva enfocada en remodelar el contorno, tensar la flacidez y suavizar el aspecto general de la piel.
+                  </p>
+</div>
+<!-- Corporal Item 5 -->
+<div class="treatment-card py-7 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+<h3 class="font-title text-lg sm:text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors">
+                      05 · Abdominal detox / desinflamación
+                    </h3>
+<span class="text-[11px] uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Confort visceral <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Abordaje focalizado para el alivio de la pesadez y la distensión digestiva, recuperando confort y armonía abdominal.
+                  </p>
+</div>
+<!-- Corporal Item 6 -->
+<div class="treatment-card py-7 group cursor-pointer transition-all duration-300 hover:pl-2">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+<h3 class="font-title text-lg sm:text-xl font-medium text-brand-charcoal group-hover:text-brand-mint-dark transition-colors">
+                      06 · Tratamiento de glúteos integral
+                    </h3>
+<span class="text-[11px] uppercase tracking-editorial text-brand-muted font-light flex items-center gap-1 group-hover:text-brand-charcoal transition-colors">
+                      Tonicidad &amp; Realce <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</span>
+</div>
+<p class="text-sm text-brand-taupe font-light leading-relaxed max-w-xl">
+                    Combinación de peptonas nutritivas, electroestimulación muscular y Exilis según el grado de firmeza requerido.
+                  </p>
+</div>
+</div>
+<!-- Sub-link -->
+<div class="pt-8">
+<a class="inline-flex items-center gap-3 text-xs uppercase tracking-widest-xl text-brand-charcoal font-semibold hover:text-brand-mint-dark transition-colors" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">
+<span>Consultar por un protocolo corporal</span>
+<span class="material-symbols-outlined text-sm">east</span>
+</a>
+</div>
+</div>
+<!-- Right Large Photo Spread with DATA:IMAGE:IMAGE_6 -->
+<div class="chapter-photo lg:col-span-6 relative order-1 lg:order-2">
+<div class="aspect-[3/4] rounded-[2.2rem] overflow-hidden shadow-lg border border-brand-border relative group">
+<img alt="Masaje y bienestar corporal MIMO" class="w-full h-full object-cover filter contrast-[1.02] transition-transform duration-700 group-hover:scale-105" src="assets/masaje-corporal.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/70 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 text-white">
+<span class="text-[10px] uppercase tracking-widest text-brand-mint font-medium block mb-1">Cuerpo &amp; Mente</span>
+<p class="font-title text-xl font-light">Modelado, desinflamación y equilibrio orgánico.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== INTERACTIVE SINERGIA TERAPÉUTICA ==================== -->
+<section class="py-24 lg:py-32 bg-[#F5EFEB] border-y border-brand-border relative overflow-hidden" id="sinergia">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 text-center">
+<div class="sinergia-intro max-w-2xl mx-auto mb-14 reveal-on-scroll">
+<span class="text-[11px] uppercase tracking-widest-xl text-brand-mint-dark font-semibold block mb-3">Sinergia Terapéutica</span>
+<h2 class="font-title text-3xl sm:text-4xl font-light text-brand-charcoal leading-tight mb-4">
+            Personalizamos cada protocolo
+          </h2>
+<p class="text-base text-brand-taupe font-light leading-relaxed">
+            No aplicamos tecnologías aisladas sin propósito. Tocá las técnicas para explorar cómo se combinan biológicamente según tus necesidades específicas.
+          </p>
+</div>
+<!-- Interactive Constellation / Combiner -->
+<div class="sinergia-stage max-w-4xl mx-auto reveal-on-scroll">
+<!-- Pills -->
+<div class="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4 mb-8" id="synergyPills">
+<button class="synergy-btn active px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-brand-charcoal text-white shadow-sm" data-key="exilis" type="button">
+              Exilis 360 Ultra
+            </button>
+<button class="synergy-btn px-6 py-3 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 bg-brand-sand border border-brand-border text-brand-charcoal hover:border-brand-mint-dark" data-key="drenaje" type="button">
+              Drenaje Linfático
+            </button>
+<button class="synergy-btn px-6 py-3 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 bg-brand-sand border border-brand-border text-brand-charcoal hover:border-brand-mint-dark" data-key="preso" type="button">
+              Presoterapia
+            </button>
+<button class="synergy-btn px-6 py-3 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 bg-brand-sand border border-brand-border text-brand-charcoal hover:border-brand-mint-dark" data-key="coreano" type="button">
+              Skincare Coreano
+            </button>
+<button class="synergy-btn px-6 py-3 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 bg-brand-sand border border-brand-border text-brand-charcoal hover:border-brand-mint-dark" data-key="modelador" type="button">
+              Masaje Modelador
+            </button>
+<button class="synergy-btn px-6 py-3 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 bg-brand-sand border border-brand-border text-brand-charcoal hover:border-brand-mint-dark" data-key="vacum" type="button">
+              Vacumterapia / Cupping
+            </button>
+<button class="synergy-btn px-6 py-3 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 bg-brand-sand border border-brand-border text-brand-charcoal hover:border-brand-mint-dark" data-key="electro" type="button">
+              Electroestimulación
+            </button>
+</div>
+<!-- Dynamic Synergy Result Card -->
+<div class="relative bg-brand-sand rounded-3xl p-8 sm:p-10 border border-brand-border text-left shadow-sm transition-all duration-500 min-h-[190px] flex flex-col justify-between" id="synergyDisplay">
+<div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+<span class="text-[11px] uppercase tracking-widest text-brand-mint-dark font-semibold" id="synergyTag">Terapia Térmica Monopolar</span>
+<span class="text-[11px] uppercase tracking-widest text-brand-muted" id="synergySessions">Facial &amp; Corporal · Sin dolor</span>
+</div>
+<h3 class="font-title text-2xl font-normal text-brand-charcoal mb-2" id="synergyTitle">Exilis 360 Ultra de Grado Médico</h3>
+<p class="text-sm sm:text-base text-brand-taupe font-light leading-relaxed max-w-3xl" id="synergyDesc">
+                Ondas de radiofrecuencia volumétrica continua que estimulan la neocolagénesis en capas profundas. En sinergia con drenaje y activos botánicos, maximiza la firmeza tisular sin agredir la piel.
+              </p>
+</div>
+<div class="pt-6 mt-4 border-t border-brand-border/60 flex items-center justify-between text-xs text-brand-muted">
+<span id="synergyPairing">Sinergia sugerida: Skincare Coreano + Drenaje Linfático</span>
+<a class="text-xs uppercase tracking-widest text-brand-charcoal hover:text-brand-mint-dark font-medium underline" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">Coordinar evaluación →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== DIAGNÓSTICO FACIAL GRATUITO (BLOQUE MINT INMERSIVO) ==================== -->
+<section class="py-20 lg:py-28 relative" id="diagnostico">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 reveal-on-scroll">
+<div class="relative rounded-[2.5rem] bg-brand-mint/45 border border-brand-mint/70 p-10 sm:p-14 lg:p-20 overflow-hidden shadow-sm">
+<!-- Subtle decorative graphic watermark -->
+<div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-white/40 blur-2xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+<div class="lg:col-span-8 space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/75 border border-brand-mint/80 text-[11px] uppercase tracking-widest text-brand-charcoal font-medium">
+                Sin costo · Sin compromiso previo
+              </div>
+<h2 class="font-title text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal leading-[1.15]">
+                Empezá con un <br class="hidden sm:inline"/><span class="font-serif-italic font-normal">diagnóstico facial</span> gratuito.
+              </h2>
+<p class="text-base sm:text-lg text-brand-charcoal/80 font-light leading-relaxed max-w-2xl">
+                Antes de comenzar, evaluamos tu piel en profundidad para conocer sus requerimientos biológicos y recomendarte el abordaje terapéutico verdaderamente adecuado para vos.
+              </p>
+</div>
+<div class="lg:col-span-4 flex lg:justify-end">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-charcoal text-brand-sand text-xs uppercase tracking-widest-xl font-medium hover:bg-white hover:text-brand-charcoal transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.02]" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.972.532 1.908.814 2.781.814 3.18 0 5.767-2.587 5.768-5.766.001-3.182-2.585-5.768-5.769-5.768zm7.415 5.767c-.002 4.083-3.328 7.408-7.413 7.408-1.299 0-2.522-.339-3.593-.933l-4.44 1.164 1.186-4.327c-.675-1.121-1.034-2.417-1.034-3.753.003-4.083 3.329-7.409 7.414-7.409 4.083 0 7.414 3.328 7.414 7.413z"></path>
+</svg>
+<span>Consultar por WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== CÓMO TRABAJAMOS ==================== -->
+<section class="py-24 lg:py-32 bg-brand-sand relative" id="metodologia">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6 reveal-on-scroll">
+<div>
+<span class="text-[11px] uppercase tracking-widest-xl text-brand-mint-dark font-semibold block mb-3">Metodología Clara</span>
+<h2 class="font-title text-3xl sm:text-4xl font-light text-brand-charcoal">
+              ¿Cómo trabajamos?
+            </h2>
+</div>
+<p class="text-sm uppercase tracking-editorial text-brand-muted">
+            Tres pasos pensados para tu confort y seguridad
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+<!-- Step 01 -->
+<div class="flex flex-col reveal-on-scroll">
+<span class="font-title text-5xl lg:text-6xl font-light text-brand-charcoal/20 mb-6">01</span>
+<h3 class="font-title text-2xl font-light text-brand-charcoal mb-4">Evaluamos</h3>
+<p class="text-sm sm:text-base text-brand-taupe font-light leading-relaxed">
+              Conocemos tu piel, tu cuerpo, tus rutinas y expectativas para identificar con exactitud qué abordaje te beneficiará más.
+            </p>
+</div>
+<!-- Step 02 -->
+<div class="flex flex-col reveal-on-scroll">
+<span class="font-title text-5xl lg:text-6xl font-light text-brand-charcoal/20 mb-6">02</span>
+<h3 class="font-title text-2xl font-light text-brand-charcoal mb-4">Diseñamos</h3>
+<p class="text-sm sm:text-base text-brand-taupe font-light leading-relaxed">
+              Seleccionamos la combinación de aparatología de punta y maniobras manuales más adecuadas para tus objetivos.
+            </p>
+</div>
+<!-- Step 03 -->
+<div class="flex flex-col reveal-on-scroll">
+<span class="font-title text-5xl lg:text-6xl font-light text-brand-charcoal/20 mb-6">03</span>
+<h3 class="font-title text-2xl font-light text-brand-charcoal mb-4">Tratamos</h3>
+<p class="text-sm sm:text-base text-brand-taupe font-light leading-relaxed">
+              Comenzamos el protocolo en nuestro consultorio privado, calibrando cada cita conforme a la evolución de tus tejidos.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== EXPERIENCIA MIMO: AMBIENTAL & QUOTE ==================== -->
+<section class="py-24 lg:py-32 bg-brand-cream/40 border-t border-brand-border relative">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 reveal-on-scroll">
+<div class="relative rounded-[2.5rem] overflow-hidden bg-brand-charcoal text-white min-h-[500px] flex items-center justify-center p-8 sm:p-14 lg:p-20 shadow-2xl">
+<!-- Background Atmospheric Photography with overlay DATA:IMAGE:IMAGE_6 -->
+<img alt="Ambiente de bienestar boutique" class="absolute inset-0 w-full h-full object-cover opacity-25 filter grayscale contrast-125" src="assets/experiencia-mimo.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-brand-charcoal/80 to-transparent"></div>
+<div class="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+<span class="text-xs uppercase tracking-widest-xl text-brand-mint font-medium">Experiencia MIMO</span>
+<h2 class="font-title text-3xl sm:text-4xl lg:text-5xl font-light leading-snug">
+              “Un espacio pensado para vos”
+            </h2>
+<p class="text-base sm:text-xl text-white/80 font-light leading-relaxed max-w-2xl mx-auto">
+              Más que un tratamiento estético, buscamos que cada visita sea un momento de cuidado profundo, desconexión y atención personalizada en un entorno sereno.
+            </p>
+<div class="pt-6 flex items-center justify-center gap-4 text-xs tracking-editorial uppercase text-white/60">
+<span>Río Grande</span>
+<span>•</span>
+<span>Tierra del Fuego</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== UBICACIÓN BOUTIQUE ==================== -->
+<section class="py-24 lg:py-32 bg-brand-sand border-t border-brand-border" id="ubicacion">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Details -->
+<div class="lg:col-span-6 space-y-8 reveal-on-scroll">
+<div>
+<span class="text-[11px] uppercase tracking-widest-xl text-brand-mint-dark font-semibold block mb-3">Consultorio Boutique</span>
+<h2 class="font-title text-3xl sm:text-4xl font-light text-brand-charcoal mb-4">
+                Encontranos en Río Grande
+              </h2>
+<p class="text-base text-brand-taupe font-light leading-relaxed">
+                Un ambiente privado, confortable y relajante. Atendemos exclusivamente con cita previa para garantizarte una experiencia de calma total y sin esperas.
+              </p>
+</div>
+<div class="space-y-6 pt-2">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-brand-mint-dark text-xl mt-0.5">pin_drop</span>
+<div>
+<h4 class="font-title text-sm uppercase tracking-wider font-semibold text-brand-charcoal">Dirección</h4>
+<p class="text-sm text-brand-taupe font-light">E. Loffler esq. José Sobral, Río Grande, Tierra del Fuego</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-brand-mint-dark text-xl mt-0.5">photo_camera</span>
+<div>
+<h4 class="font-title text-sm uppercase tracking-wider font-semibold text-brand-charcoal">Instagram</h4>
+<a class="text-sm text-brand-charcoal hover:text-brand-mint-dark font-light underline transition-colors" href="https://instagram.com/mimo.estetica.rg" rel="noopener noreferrer" target="_blank">
+                    @mimo.estetica.rg
+                  </a>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-brand-mint-dark text-xl mt-0.5">chat</span>
+<div>
+<h4 class="font-title text-sm uppercase tracking-wider font-semibold text-brand-charcoal">Consultas &amp; Turnos</h4>
+<a class="text-sm text-brand-charcoal hover:text-brand-mint-dark font-light underline transition-colors" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">
+                    Atención directa vía WhatsApp
+                  </a>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full border border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-white text-xs uppercase tracking-widest-xl font-medium transition-all duration-300" href="https://www.google.com/maps/dir/?api=1&amp;destination=Ernesto+Loffler+y+Jose+Maria+Sobral%2C+Rio+Grande%2C+Tierra+del+Fuego%2C+Argentina" rel="noopener noreferrer" target="_blank">
+<span>Cómo llegar con Google Maps</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</div>
+<!-- Mapa interactivo -->
+<div class="lg:col-span-6 reveal-on-scroll">
+<div class="p-4 sm:p-6 rounded-[2rem] bg-brand-cream border border-brand-border relative">
+<div class="w-full h-80 rounded-2xl overflow-hidden bg-[#E6E0D9]">
+<iframe title="Mapa de la zona de MIMO en Río Grande" src="https://maps.google.com/maps?q=Ernesto%20Loffler%20y%20Jose%20Maria%20Sobral%2C%20Rio%20Grande%2C%20Tierra%20del%20Fuego%2C%20Argentina&amp;z=16&amp;output=embed" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+</div>
+<div class="mt-4 flex items-center justify-between text-xs text-brand-muted px-2">
+<span>E. Loffler esq. José Sobral</span>
+<a class="text-brand-eucalyptus underline underline-offset-4 hover:text-brand-mint-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Ernesto+Loffler+y+Jose+Maria+Sobral%2C+Rio+Grande%2C+Tierra+del+Fuego%2C+Argentina" target="_blank" rel="noopener noreferrer">Abrir mapa ↗</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== CTA FINAL EDITORIAL ==================== -->
+<section class="py-24 lg:py-32 bg-brand-cream/60 border-t border-brand-border">
+<div class="max-w-4xl mx-auto px-6 sm:px-10 text-center space-y-8 reveal-on-scroll">
+<span class="text-[11px] uppercase tracking-widest-xl text-brand-mint-dark font-semibold">Iniciá tu camino</span>
+<h2 class="font-title text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal leading-tight">
+          ¿Querés saber qué tratamiento <br/><span class="font-serif-italic font-normal">es para vos?</span>
+</h2>
+<p class="text-base sm:text-lg text-brand-taupe font-light max-w-xl mx-auto leading-relaxed">
+          Escribinos y conocemos tus objetivos para orientarte sobre las opciones disponibles y comenzar tu plan a medida.
+        </p>
+<div class="pt-4">
+<a class="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-brand-charcoal text-brand-sand text-xs uppercase tracking-widest-xl font-medium hover:bg-brand-eucalyptus hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.972.532 1.908.814 2.781.814 3.18 0 5.767-2.587 5.768-5.766.001-3.182-2.585-5.768-5.769-5.768zm7.415 5.767c-.002 4.083-3.328 7.408-7.413 7.408-1.299 0-2.522-.339-3.593-.933l-4.44 1.164 1.186-4.327c-.675-1.121-1.034-2.417-1.034-3.753.003-4.083 3.329-7.409 7.414-7.409 4.083 0 7.414 3.328 7.414 7.413z"></path>
+</svg>
+<span>Hablar por WhatsApp</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-brand-sand border-t border-brand-border py-16">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-14 border-b border-brand-border">
+<!-- Logo & Brand Description -->
+<div class="md:col-span-5 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-white/80 p-0.5 border border-brand-border flex items-center justify-center">
+<img alt="MIMO Logo" class="w-full h-full object-contain" src="assets/logo-mimo.jpg"/>
+</div>
+<span class="font-title tracking-[0.24em] text-sm uppercase font-semibold text-brand-charcoal">MIMO</span>
+</div>
+<p class="text-sm text-brand-taupe font-light max-w-sm leading-relaxed">
+            Medicina estética y bienestar orgánico no invasivo en Río Grande, Tierra del Fuego.
+          </p>
+</div>
+<!-- Navigation Links -->
+<div class="md:col-span-3 space-y-3">
+<h4 class="text-xs uppercase tracking-widest-xl text-brand-charcoal font-medium">Explorar</h4>
+<ul class="space-y-2 text-xs uppercase tracking-editorial text-brand-taupe font-light">
+<li><a class="hover:text-brand-charcoal transition-colors" href="#filosofia">Filosofía</a></li>
+<li><a class="hover:text-brand-charcoal transition-colors" href="#tratamientos">Tratamientos</a></li>
+<li><a class="hover:text-brand-charcoal transition-colors" href="#sinergia">Sinergia</a></li>
+<li><a class="hover:text-brand-charcoal transition-colors" href="#diagnostico">Diagnóstico</a></li>
+<li><a class="hover:text-brand-charcoal transition-colors" href="#metodologia">Metodología</a></li>
+</ul>
+</div>
+<!-- Social & Contact -->
+<div class="md:col-span-4 space-y-3">
+<h4 class="text-xs uppercase tracking-widest-xl text-brand-charcoal font-medium">Contacto</h4>
+<p class="text-sm text-brand-taupe font-light">E. Loffler esq. José Sobral, Río Grande</p>
+<div class="pt-2 flex flex-col space-y-1.5 text-xs text-brand-charcoal">
+<a class="hover:text-brand-mint-dark underline transition-colors" href="https://instagram.com/mimo.estetica.rg" rel="noopener noreferrer" target="_blank">
+              @mimo.estetica.rg
+            </a>
+<a class="hover:text-brand-mint-dark underline transition-colors" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank">
+              WhatsApp Directo
+            </a>
+</div>
+</div>
+</div>
+<!-- Legal & Credits Bar -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-muted font-light">
+<p>© <span id="currentYear">2026</span> MIMO Estética &amp; Salud. Todos los derechos reservados.</p>
+<p class="tracking-widest uppercase text-[10px]">Atención boutique privada · Río Grande, Tierra del Fuego</p>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp Action -->
+<a aria-label="Escribir por WhatsApp" class="floating-whatsapp fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-50 rounded-full transition-all duration-300 hover:-translate-y-1" href="https://wa.me/message/V6JGKWLRPE47K1" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined" aria-hidden="true">chat</span><span>WhatsApp</span></a>
+<!-- Micro-interactions Script -->
+<script>
+    // Smooth IntersectionObserver reveal
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+      const header = document.querySelector("header");
+      const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 24);
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+      const heroVideo = document.querySelector(".hero-video");
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        heroVideo.pause();
+      } else if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver(([entry]) => {
+          if (entry.isIntersecting && !document.hidden) heroVideo.play().catch(() => {});
+          else heroVideo.pause();
+        }, { threshold: 0.05 });
+        videoObserver.observe(document.getElementById("hero"));
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) heroVideo.pause();
+          else if (document.getElementById("hero").getBoundingClientRect().bottom > 0) heroVideo.play().catch(() => {});
+        });
+      }
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      menuToggle.addEventListener("click", () => {
+        const open = mobileNav.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+        menuToggle.querySelector("span").textContent = open ? "close" : "menu";
+      });
+      mobileNav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+        mobileNav.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menú");
+        menuToggle.querySelector("span").textContent = "menu";
+      }));
+      document.querySelectorAll("img").forEach((img, index) => {
+        if (index > 1) img.loading = "lazy";
+        img.decoding = "async";
+      });
+      const reveals = document.querySelectorAll(".reveal-on-scroll");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px 60px 0px" });
+        reveals.forEach(el => observer.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add("is-visible"));
+      }
+
+      // Interactive Sinergia Terapéutica logic
+      const synergies = {
+        exilis: {
+          tag: "Terapia Térmica Monopolar",
+          sessions: "Facial & Corporal · Sin dolor",
+          title: "Exilis 360 Ultra de Grado Médico",
+          desc: "Ondas de radiofrecuencia volumétrica continua que estimulan la neocolagénesis en capas profundas. En sinergia con drenaje y activos botánicos, maximiza la firmeza tisular sin agredir la piel.",
+          pairing: "Sinergia sugerida: Skincare Coreano + Drenaje Linfático"
+        },
+        drenaje: {
+          tag: "Técnica Manual Circulatoria",
+          sessions: "Cuerpo entero · Descompresión inmediata",
+          title: "Drenaje Linfático Manual Clínico",
+          desc: "Maniobras suaves y precisas que desvían y activan el flujo de la linfa hacia los ganglios principales. Fundamental para eliminar edemas, desinflamar y recuperar ligereza anatómica.",
+          pairing: "Sinergia sugerida: Presoterapia secuencial + Abdominal detox"
+        },
+        preso: {
+          tag: "Compresión Neumática Inteligente",
+          sessions: "Miembros inferiores y abdomen",
+          title: "Presoterapia de Cámaras Secuenciales",
+          desc: "Estimulación gradiente de presión que potencia el retorno venoso, elimina toxinas retenidas y prepara el tejido adiposo para tratamientos modeladores o de recuperación deportiva.",
+          pairing: "Sinergia sugerida: Masaje Modelador + Ultracavitación"
+        },
+        coreano: {
+          tag: "Cosmecéutica Botánica Pura",
+          sessions: "Rostro, cuello y escote",
+          title: "Ritual Glass Skin Coreano",
+          desc: "Capas progresivas de activos fermentados, centella asiática y péptidos biotecnológicos. Restablece la barrera lipídica y otorga un brillo húmedo, jugoso y translúcido inigualable.",
+          pairing: "Sinergia sugerida: Limpieza profunda desincrustante + Exilis Facial"
+        },
+        modelador: {
+          tag: "Terapia Manual Vigorosa",
+          sessions: "Zonas localizadas",
+          title: "Masaje Modelador Tisular",
+          desc: "Maniobras de amasamiento y fricción que reactivan la circulación local, mejoran la oxigenación celular y facilitan la reducción de contornos en áreas rebeldes.",
+          pairing: "Sinergia sugerida: Vacumterapia / Cupping + Ultracavitación"
+        },
+        vacum: {
+          tag: "Succión Mecánica Subdérmica",
+          sessions: "Glúteos, muslos y flancos",
+          title: "Vacumterapia / Cupping Terapéutico",
+          desc: "Despega los planos fasciales, disuelve adherencias de celulitis fibrótica y estimula una intensa hiperemia que nutre los tejidos dérmicos.",
+          pairing: "Sinergia sugerida: Electroestimulación + Peptonas"
+        },
+        electro: {
+          tag: "Tonificación Neuromuscular",
+          sessions: "Abdomen, glúteos y piernas",
+          title: "Electroestimulación Focalizada",
+          desc: "Impulsos biomiméticos que activan fibras musculares profundas, aumentando el tono, previniendo la flacidez muscular y mejorando la postura integral.",
+          pairing: "Sinergia sugerida: Tratamiento de glúteos + Exilis 360 Corporal"
+        }
+      };
+
+      const buttons = document.querySelectorAll(".synergy-btn");
+      const tagEl = document.getElementById("synergyTag");
+      const sessEl = document.getElementById("synergySessions");
+      const titleEl = document.getElementById("synergyTitle");
+      const descEl = document.getElementById("synergyDesc");
+      const pairEl = document.getElementById("synergyPairing");
+      const card = document.getElementById("synergyDisplay");
+      let synergyTimer;
+
+      buttons.forEach(btn => {
+        btn.setAttribute("aria-pressed", String(btn.classList.contains("active")));
+        btn.addEventListener("click", () => {
+          buttons.forEach(b => {
+            b.setAttribute("aria-pressed", "false");
+            b.classList.remove("active");
+            b.classList.remove("bg-brand-charcoal", "text-white", "shadow-sm");
+            b.classList.add("bg-brand-sand", "border", "border-brand-border", "text-brand-charcoal");
+          });
+          btn.classList.add("bg-brand-charcoal", "text-white", "shadow-sm");
+          btn.classList.add("active");
+          btn.setAttribute("aria-pressed", "true");
+          btn.classList.remove("bg-brand-sand", "border", "border-brand-border", "text-brand-charcoal");
+
+          const key = btn.dataset.key;
+          const data = synergies[key];
+
+          clearTimeout(synergyTimer);
+          card.classList.remove("is-entering");
+          card.classList.add("is-switching");
+          synergyTimer = setTimeout(() => {
+            tagEl.textContent = data.tag;
+            sessEl.textContent = data.sessions;
+            titleEl.textContent = data.title;
+            descEl.textContent = data.desc;
+            pairEl.textContent = data.pairing;
+            card.classList.remove("is-switching");
+            void card.offsetWidth;
+            card.classList.add("is-entering");
+          }, 230);
+        });
+      });
+    });
+  </script>
+</body></html>
